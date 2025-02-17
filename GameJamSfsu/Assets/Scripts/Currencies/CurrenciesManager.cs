@@ -3,11 +3,6 @@ Class that handles currencies (Money, Intellect, Military Might)
 Has getters and setters for all currencies as well as an add to function for easier simple math
 */
 
-using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-
 static public class CurrenciesManager
 {
     static int money = 0;
