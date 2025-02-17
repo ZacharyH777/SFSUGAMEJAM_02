@@ -25,6 +25,9 @@ public class DrawFromDeck : MonoBehaviour
         {
             GameObject card = Instantiate(cardPrefab, transform.position, Quaternion.identity);
             card.transform.SetParent (handPrefab.transform.GetChild(0));
+            ClickAndDrag cardOrder = card.GetComponent<ClickAndDrag>();
+
+            cardOrder.setCardOrder(i);
             card.name = "Card_" + (i + 1);
         }
     }
