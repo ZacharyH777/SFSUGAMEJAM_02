@@ -13,10 +13,12 @@ public class ClickAndDrag : MonoBehaviour
     private Vector3 max_card_size;
     private Vector3 original_card_size;
 
+    private int cardNumber = 0;
+
     void Start()
     {
         original_card_size = transform.localScale;
-        max_card_size = new Vector3(3f, 4.5f, 0f); 
+        max_card_size = new Vector3(4f, 5.33f, 0f); 
         cam = Camera.main;
 
         if (cam == null)
@@ -34,13 +36,20 @@ public class ClickAndDrag : MonoBehaviour
 
             if (hit_collider != null && hit_collider.gameObject == gameObject)
             {
+                this.GetComponent<SpriteRenderer>().sortingOrder = 1000000;
+                this.transform.GetChild(0).gameObject.GetComponent<Canvas>().sortingOrder = 1000000;
+                this.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1000000;
+
                 is_dragging = true;
                 offset = transform.position - cam.ScreenToWorldPoint(Input.mousePosition);
             }
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && is_dragging)
         {
+            this.GetComponent<SpriteRenderer>().sortingOrder = cardNumber;
+            this.transform.GetChild(0).gameObject.GetComponent<Canvas>().sortingOrder = cardNumber;
+            this.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().sortingOrder = cardNumber;
             is_dragging = false;
         }
 
@@ -65,5 +74,9 @@ public class ClickAndDrag : MonoBehaviour
                 transform.localScale = original_card_size;
             }
         }
+    }
+    public void setCardOrder(int cardOrder)
+    {
+        cardNumber = cardOrder;
     }
 }
