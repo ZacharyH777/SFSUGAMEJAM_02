@@ -44,3 +44,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: FrontDash
+    uniqueID: 4231243475
+    locked: 0
+  - name: cards
+    uniqueID: 3074307083
+    locked: 0

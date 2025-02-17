@@ -29,27 +29,16 @@ public class HandPosition : MonoBehaviour
         
         for (int i = 0; i < HANDSIZE; i++)
         {
-            if (i % 2 != 0)
-            {
-                odd_card_positions[i] = new Vector3((i+1) * 1.5f, 0, 0) + hand_position;
-            }
-            else
-            {
-                odd_card_positions[i] = new Vector3(-i * 1.5f, 0, 0) + hand_position;
-            }
+            odd_card_positions[i] = new Vector3((i) * 1.5f, 0, 0) + hand_position;
             Debug.Log("Vector odd position: " + odd_card_positions[i]);
         }
 
         for (int i = 0; i < HANDSIZE - 1; i++)
         {
             if (i % 2 == 0)
-            {
-                even_card_positions[i] = new Vector3((i + 0.5f) * 1.5f, 0, 0) + hand_position;
-            }
-            else
-            {
-                even_card_positions[i] = new Vector3(-(i + 0.5f) * 1.5f, 0, 0) + hand_position;
-            }
+
+            even_card_positions[i] = new Vector3((i + 0.5f) * 1.5f, 0, 0) + hand_position;
+            
             Debug.Log("Vector even position: " + even_card_positions[i]);
         }
     }

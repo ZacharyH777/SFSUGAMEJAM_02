@@ -35,6 +35,10 @@ public class DrawFromDeck : MonoBehaviour
     {
         if(StartScreenTimer.get_time() > 2.5f && !onlyOnce)
         {
+            for(int i = 0; i < DeckSize || i < HandPosition.HANDSIZE; i++)
+            {
+                
+            }
             
             onlyOnce = true;
         }

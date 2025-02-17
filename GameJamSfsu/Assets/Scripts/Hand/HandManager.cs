@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class HandManager : MonoBehaviour
 {
+    private List<Transform> cardsInHand;
     
     void Start()
     {
-        
+        cardsInHand = new List<Transform>();
     }
 
-    void Update()
+    void addCards()
     {
         
+    }
+    void removeCards()
+    {
+
+    }
+
+    void swapCards()
+    {
+
     }
 }
