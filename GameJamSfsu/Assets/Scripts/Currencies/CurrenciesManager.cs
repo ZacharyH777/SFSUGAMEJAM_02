@@ -1,5 +1,5 @@
 /*
-Class that handles currencies (Money, Intellect, Military Might)
+Class that handles currencies (Money, Intellect, Military Might, Favor)
 Has getters and setters for all currencies as well as an add to function for easier simple math
 */
 
